@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 
-
 namespace SppoLab2.Script.Workinging;
 
 public class CourseWork : Work

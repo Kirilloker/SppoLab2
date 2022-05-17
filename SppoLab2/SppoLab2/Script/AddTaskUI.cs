@@ -1,21 +1,19 @@
-﻿using SppoLab2.Script;
-using SppoLab2.Script.Users;
-using SppoLab2.Script.Workinging;
+﻿using SppoLab2.Script.Workinging;
 using SppoLab2.WindowsForm;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-
 namespace SppoLab2.Script;
 
-internal class PrintAllTask : PrintFunctional
+internal class AddTaskUI : SketchForm
 {
-    public PrintAllTask(List<Task> _tasks, String _mainLabel, List<GetInfo> _labels, Admin _admin) : base(_mainLabel, _labels, _admin)
+    public AddTaskUI(List<Task> _tasks)
     {
+        CreateWindows("Список всех заданий", new List<GetInfo>(admin.GetListTasks()));
+
         CreateButtonInPanel("Добавить", AddTask);
         tasks = _tasks;
-
     }
 
     List<Task> tasks = new List<Task>();

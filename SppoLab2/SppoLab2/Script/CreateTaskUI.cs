@@ -1,5 +1,4 @@
-﻿using SppoLab2.Script.Users;
-using SppoLab2.Script.Workinging;
+﻿using SppoLab2.Script.Workinging;
 using SppoLab2.WindowsForm;
 using System;
 using System.Collections.Generic;
@@ -7,10 +6,15 @@ using System.Windows.Forms;
 
 namespace SppoLab2.Script;
 
-internal class CreateTaskForm : PrintFunctional
+internal class CreateTaskUI : SketchForm
 {
-    public CreateTaskForm(String _mainLabel, List<GetInfo> _labels, Admin _admin) : base(_mainLabel, _labels, _admin)
+    public CreateTaskUI()
     {
+        List<Task> line = new List<Task>();
+        line.Add(new Task("Текст задания:"));
+
+        CreateWindows("Создание задания", new List<GetInfo>(line));
+
         CreateTextBox();
         CreateButton("Сохранить", SaveTask);
     }

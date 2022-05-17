@@ -6,14 +6,14 @@ public class Work : GetInfo
     protected string name;
     protected string workDiscription;
     protected string typeWork;
-    protected List<Task> listTask;
+
+    protected List<Task> listTask = new List<Task>();
 
     public Work(string _name, string _workDiscription, string _typeWork)
     {
         typeWork = _typeWork;
         name = _name;
         workDiscription = _workDiscription;
-        listTask = new List<Task>();
     }
 
     public Work()
@@ -30,16 +30,11 @@ public class Work : GetInfo
             "Описание: " + workDiscription + "\n" +
             "Задания:" + "\n";
 
-
         for (int i = 0; i < listTask.Count; i++)
         {
             str += "    " + (i + 1).ToString() + ". " + listTask[i].GetFullInfo() + "\n";
         }
 
-        System.Console.WriteLine(str);
-        System.Console.WriteLine("Test");
-        string[] test = str.Split('\n');
-        System.Console.WriteLine(test.Length);
         return str;
     }
 
@@ -59,9 +54,9 @@ public class Work : GetInfo
 
         set
         {
-            if (value.Length <= 2 || value.Length >= 200)
+            if (value.Length <= 1 || value.Length >= 200)
             {
-                UI.PrintWarning("Имя работы должно быть от 2 до 200 символов!");
+                UI.PrintWarning("Имя работы должно быть от 1 до 200 символов!");
             }
             else
             {
@@ -76,9 +71,9 @@ public class Work : GetInfo
 
         set
         {
-            if (value.Length <= 2 || value.Length >= 1000)
+            if (value.Length <= 1 || value.Length >= 1000)
             {
-                UI.PrintWarning("Описание работы должно быть от 2 до 1 000 символов!");
+                UI.PrintWarning("Описание работы должно быть от 1 до 1 000 символов!");
             }
             else
             {

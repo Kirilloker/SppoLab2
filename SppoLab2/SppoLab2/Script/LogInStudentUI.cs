@@ -9,10 +9,12 @@ using System.Windows.Forms;
 
 namespace SppoLab2.Script;
 
-internal class LogInStudent : PrintFunctional
+internal class LogInStudentUI : SketchForm
 {
-    public LogInStudent(String _mainLabel, List<GetInfo> _labels, Admin _admin) : base(_mainLabel, _labels, _admin)
+    public LogInStudentUI()
     {
+        CreateWindows("Авторизация студента", new List<GetInfo>(Admin.getInstance().GetListStudents()));
+
         CreateButtonInPanel("Войти", InputStudent);
     }
 

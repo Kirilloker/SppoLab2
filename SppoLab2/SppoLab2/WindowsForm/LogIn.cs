@@ -31,7 +31,7 @@ namespace SppoLab2.WindowsForm
                 return;
             }
 
-            var newForm = new LogInStudent("Авторизация студента", new List<GetInfo>(adminUI.GetAdmin().GetListStudents()), adminUI.GetAdmin());
+            var newForm = new LogInStudentUI();
             newForm.Show();
         }
 

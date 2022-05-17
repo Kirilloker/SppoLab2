@@ -9,33 +9,54 @@ using System.Windows.Forms;
 
 namespace SppoLab2.Script;
 
-internal class SubscribeCourse : PrintFunctional
+internal class SubscribeCourse : SketchForm
 {
-    public SubscribeCourse(String _mainLabel, List<GetInfo> _labels, Admin _admin, Student _student) : base(_mainLabel, _labels, _admin, _student)
+    public SubscribeCourse(Student _student) 
     {
+        student = _student;
+
+        CreateWindows("Запись на курс", new List<GetInfo>(admin.GetListCourse()));
+
         CreateButtonInPanel("Подробнее", DeepPrintCourse);
-        CreateButtonInPanel("Записаться", Subscribe);
+        CreateButtonInPanel("Записаться (not protected)", SubscribeNoProtected);
+        CreateButtonInPanel("Записаться (protected)", SubscribeWithProtected);
     }
 
-    private void Subscribe(object sender, EventArgs e)
+    private void SubscribeWithProtected(object sender, EventArgs e)
     {
         int countCourse = (int)((Control)sender).Tag;
-        bool x = admin.GetListCourse()[countCourse].AddStudent(student);
+        bool trySubscribe = admin.GetListCourse()[countCourse].AddStudentWithProtected(student);
 
-        if (x)
+        if (trySubscribe == true)
         {
             MessageBox.Show("Вы успешно записались на курс!", "Warning");
         }
         else
         {
-            MessageBox.Show("На курс не удалось попдисаться", "Warning");
+            MessageBox.Show("На курс не удалось подписаться", "Warning");
+        }
+    }
+
+    private void SubscribeNoProtected(object sender, EventArgs e)
+    {
+        int countCourse = (int)((Control)sender).Tag;
+        bool trySubscribe = admin.GetListCourse()[countCourse].AddStudentNoProtected(student);
+
+        if (trySubscribe == true)
+        {
+            MessageBox.Show("Вы успешно записались на курс!", "Warning");
+        }
+        else
+        {
+            MessageBox.Show("На курс не удалось подписаться", "Warning");
         }
     }
 
     private void DeepPrintCourse(object sender, EventArgs e)
     {
         int countCourse = (int)((Control)sender).Tag;
-        var newForm = new PrintCourseStudent(admin.GetListCourse()[countCourse].GetFullInfo(), new List<GetInfo>(), student);
-        newForm.Show();
+        //var newForm = new PrintCourseStudent(admin.GetListCourse()[countCourse].GetFullInfo(), new List<GetInfo>(), student);
+        //newForm.Show();
+        MessageBox.Show(admin.GetListCourse()[countCourse].GetFullInfo(), "Описание Курса");
     }
 }

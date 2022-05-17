@@ -36,7 +36,7 @@ namespace SppoLab2.WindowsForm
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var newWindow = new PrintCourseStudent("Список всех курсов", new List<GetInfo>(student.GetListCourse()), student);
+            var newWindow = new PrintCourseStudentUI(student);
             newWindow.Show();
         }
 
@@ -49,13 +49,8 @@ namespace SppoLab2.WindowsForm
         {
             new Thread(new ThreadStart(delegate
             {
-                Application.Run(new SubscribeCourse("Запись на курс", 
-                    new List<GetInfo>(admin.GetListCourse()), 
-                    admin, student));
+                Application.Run(new SubscribeCourse(student));
             })).Start();
-
-
-
         }
     }
 }

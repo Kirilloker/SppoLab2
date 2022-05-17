@@ -1,30 +1,19 @@
-﻿namespace SppoLab2.Script.Users;
-
-using SppoLab2.Script.Courses;
-using SppoLab2.Script.LearnPath;
+﻿using SppoLab2.Script.Courses;
 using System.Collections.Generic;
+
+namespace SppoLab2.Script.Users;
 
 public class Student : GetInfo
 {
+    private List<Course> myCourse = new List<Course>();
     public string name { get; private set; }
     public string group { get; private set; }
-    //public LearnPath myLearningPath { get; private set; }
-
-    private List<Course> myCourse = new List<Course>();
-
-    //public Student(string _name, string _group, LearnPath _myLearningPath)
-    //{
-    //    name = _name;
-    //    group = _group;
-    //    myLearningPath = _myLearningPath;
-    //}
+    
 
     public Student(string _name, string _group)
     {
         name = _name;
         group = _group;
-
-        //myLearningPath = new LearnPath(new List<Courses.ICourse>());
     }
 
     public string GetFullInfo()
@@ -40,7 +29,7 @@ public class Student : GetInfo
         return name;
     }
 
-    public void DeleteCourse(Course course)
+    public void UnsubscribeCourse(Course course)
     {
         myCourse.Remove(course);
     }

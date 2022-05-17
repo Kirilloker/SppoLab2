@@ -3,101 +3,64 @@ using SppoLab2.Script.Users;
 using SppoLab2.Script.Workinging;
 using System;
 using System.Collections.Generic;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace SppoLab2.WindowsForm
 {
     public partial class AdminUI : Form
     {
-        Admin admin;
+        Admin admin = Admin.getInstance();
 
         public AdminUI()
         {
-            admin = new Admin();
             InitializeComponent();
         }
 
-
-        private void CreateNewStudent(object sender, EventArgs e)
+        private void CreateStudent(object sender, EventArgs e)
         {
-            List<Task> tasks = new List<Task>();
-            tasks.Add(new Task("ФИО:"));
-            tasks.Add(new Task("Группа:"));
-
-            var newWindow = new SppoLab2.Script.CreateStudent(
-                "Регистрация студента",
-                new List<GetInfo>(tasks),
-                admin);
-
-            newWindow.Show();
-        }
-
-        public void AddNewStudent(Student student)
-        {
-            admin.AddStudent(student);
+            var newForm = new CreateStudentUI();
+            newForm.Show();
         }
 
         private void PrintAllStudent(object sender, EventArgs e)
         {
-            var newWindow = new CheckAllStudentsUI("Список всех студентов", new List<GetInfo>(admin.GetListStudents()), admin);
+            var newWindow = new PrintAllStudentsUI();
             newWindow.Show();
         }
 
         private void PrintAllTask(object sender, EventArgs e)
         {
-            var newWindow = new PrintAllTaskUI("Список всех заданий", new List<GetInfo>(admin.GetListTasks()), admin);
+            var newWindow = new PrintAllTaskUI();
             newWindow.Show();
         }
 
         private void PrintAllWork(object sender, EventArgs e)
         {
-            var newWindow = new PrintAllWorkUI("Список всех работ", new List<GetInfo>(admin.GetListWork()), admin);
+            var newWindow = new PrintAllWorkUI();
             newWindow.Show();
         }
 
         private void PrintAllCourse(object sender, EventArgs e)
         {
-            var newWindow = new PrintAllCourseUI("Список всех курсов", new List<GetInfo>(admin.GetListCourse()), admin);
+            var newWindow = new PrintAllCourseUI();
             newWindow.Show();
         }
 
         private void CreateNewCourse(object sender, EventArgs e)
         {
-            List<Task> tasks = new List<Task>();
-            tasks.Add(new Task("Название:"));
-            tasks.Add(new Task("Описание:"));
-            tasks.Add(new Task("Количество свободных мест:"));
-
-            var newWindow = new SppoLab2.Script.CreateCourse(
-                "Создание нового курса",
-                new List<GetInfo>(tasks),
-                admin);
-
+            var newWindow = new CreateCourseUI();
             newWindow.Show();
         }
 
-        private void CreateNewWork(object sender, EventArgs e)
+        private void CreateWork(object sender, EventArgs e)
         {
-            List<Task> tasks = new List<Task>();
-            tasks.Add(new Task("Название:"));
-            tasks.Add(new Task("Описание:"));
-
-            var newWindow = new SppoLab2.Script.CreateWork(
-               "Создание новой работы",
-               new List<GetInfo>(tasks),
-               admin);
-
-
+            var newWindow = new CreateWorkUI();
             newWindow.Show();
         }
 
-        private void CreateNewTask(object sender, EventArgs e)
+        private void CreateTask(object sender, EventArgs e)
         {
-            List<Task> tasks = new List<Task>();
-            tasks.Add(new Task("Текст задания:"));
-
-            var newWindow = new CreateTaskForm("Создание нового задания", new List<GetInfo>(tasks), admin);
+            var newWindow = new CreateTaskUI();
             newWindow.Show();
         }
 
@@ -109,11 +72,6 @@ namespace SppoLab2.WindowsForm
         public void DeleteStudent(int countStudent)
         {
             admin.DeleteStudent(countStudent);
-        }
-
-        public void CreateNewStudent(string FIO, string group)
-        {
-            admin.CreateNewStudent(FIO, group);
         }
 
         private void AdminUI_Load(object sender, EventArgs e)

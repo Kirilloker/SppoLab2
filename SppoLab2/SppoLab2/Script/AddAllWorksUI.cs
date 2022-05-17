@@ -9,13 +9,14 @@ using System.Windows.Forms;
 
 namespace SppoLab2.Script;
 
-internal class PrintAllWorks : PrintFunctional
+internal class AddAllWorksUI : SketchForm
 {
-    public PrintAllWorks(List<Work> _works, String _mainLabel, List<GetInfo> _labels, Admin _admin) : base(_mainLabel, _labels, _admin)
+    public AddAllWorksUI(List<Work> _works)
     {
+        CreateWindows("Список всех работ", new List<GetInfo>(admin.GetListWork()));
+
         CreateButtonInPanel("Добавить", AddWork);
         works = _works;
-
     }
 
     List<Work> works = new List<Work>();

@@ -5,16 +5,21 @@ using SppoLab2.WindowsForm;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Threading;
 using System.Windows.Forms;
 
 
 namespace SppoLab2.Script;
 
-internal class CreateWork : PrintFunctional
+internal class CreateWorkUI : SketchForm
 {
-    public CreateWork(String _mainLabel, List<GetInfo> _labels, Admin _admin) : base(_mainLabel, _labels, _admin)
+    public CreateWorkUI()
     {
+        List<Task> line = new List<Task>();
+        line.Add(new Task("Название:"));
+        line.Add(new Task("Описание:"));
+
+        CreateWindows("Создание работы", new List<GetInfo>(line));
+
         CreateTextBox();
         CreateButton("Добавить задания", AddTask);
         CreateButton("Создать", SaveWork);
@@ -27,7 +32,7 @@ internal class CreateWork : PrintFunctional
 
     public void AddTask(object sender, EventArgs e)
     {
-        var newWindow = new PrintAllTask(tasks, "Список всех заданий", new List<GetInfo>(admin.GetListTasks()), admin);
+        var newWindow = new AddTaskUI(tasks);
         newWindow.Show();
     }
 

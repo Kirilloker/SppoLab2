@@ -7,24 +7,29 @@ using System.Windows.Forms;
 
 namespace SppoLab2.Script;
 
-internal class CreateStudent : PrintFunctional
+internal class CreateStudentUI : SketchForm
 {
-    public CreateStudent(String _mainLabel, List<GetInfo> _labels, Admin _admin) : base(_mainLabel, _labels, _admin)
+    public CreateStudentUI()
     {
+        List<Task> line = new List<Task>();
+        line.Add(new Task("ФИО:"));
+        line.Add(new Task("Группа:"));
+
+        CreateWindows("Регистрация студента", new List<GetInfo>(line));
+
         CreateTextBox();
         CreateButton("Зарегистрировать", RegistrationStudent);
     }
 
     public void RegistrationStudent(object sender, EventArgs e)
     {
-
         if (textBox[0].Text == "" || textBox[1].Text == "")
         {
             MessageBox.Show("Какое-то поле не заполнено!", "Warning");
         }
         else
         {
-            admin.CreateNewStudent(textBox[0].Text, textBox[1].Text);
+            admin.AddNewStudent(textBox[0].Text, textBox[1].Text);
             this.Close();
         }
     }

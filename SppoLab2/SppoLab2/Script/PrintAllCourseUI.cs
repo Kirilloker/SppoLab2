@@ -9,10 +9,12 @@ using System.Windows.Forms;
 
 namespace SppoLab2.Script;
 
-internal class PrintAllCourseUI : PrintFunctional
+internal class PrintAllCourseUI : SketchForm
 {
-    public PrintAllCourseUI(String _mainLabel, List<GetInfo> _labels, Admin _admin) : base(_mainLabel, _labels, _admin)
+    public PrintAllCourseUI() 
     {
+        CreateWindows("Список всех курсов", new List<GetInfo>(admin.GetListCourse()));
+
         CreateButtonInPanel("Подробнее", DeepPrintCourse);
         CreateButtonInPanel("Удалить", DeleteCourse);
     }
@@ -22,15 +24,17 @@ internal class PrintAllCourseUI : PrintFunctional
         int countCourse= (int)((Control)sender).Tag;
         admin.DeleteCourse(countCourse);
 
-        var newForm = new PrintAllCourseUI(MainLabel.Text, new List<GetInfo>(admin.GetListCourse()), admin);
+        var newForm = new PrintAllCourseUI();
         newForm.Show();
+
         this.Close();
     }
 
     private void DeepPrintCourse(object sender, EventArgs e)
     {
         int countCourse= (int)((Control)sender).Tag;
-        var newForm = new PrintAllCourseUI(admin.GetListCourse()[countCourse].GetFullInfo(), new List<GetInfo>(), admin);
-        newForm.Show();
+        //var newForm = new PrintAllCourseUI(admin.GetListCourse()[countCourse].GetFullInfo(), new List<GetInfo>(), admin);
+        //newForm.Show();
+        MessageBox.Show(admin.GetListCourse()[countCourse].GetFullInfo(), "Описание курса");
     }
 }

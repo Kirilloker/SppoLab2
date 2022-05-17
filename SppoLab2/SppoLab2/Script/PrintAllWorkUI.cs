@@ -9,10 +9,12 @@ using System.Windows.Forms;
 
 namespace SppoLab2.Script;
 
-internal class PrintAllWorkUI : PrintFunctional
+internal class PrintAllWorkUI : SketchForm
 {
-    public PrintAllWorkUI(String _mainLabel, List<GetInfo> _labels, Admin _admin) : base(_mainLabel, _labels, _admin)
+    public PrintAllWorkUI()
     {
+        CreateWindows("Список всех заданий", new List<GetInfo>(admin.GetListWork()));
+
         CreateButtonInPanel("Подробнее", DeepPrintWork);
         CreateButtonInPanel("Удалить", DeleteWork);
     }
@@ -22,7 +24,7 @@ internal class PrintAllWorkUI : PrintFunctional
         int countWork = (int)((Control)sender).Tag;
         admin.DeleteWork(countWork);
 
-        var newForm = new PrintAllWorkUI(MainLabel.Text, new List<GetInfo>(admin.GetListWork()), admin);
+        var newForm = new PrintAllWorkUI();
         newForm.Show();
         this.Close();
     }
@@ -30,7 +32,8 @@ internal class PrintAllWorkUI : PrintFunctional
     private void DeepPrintWork(object sender, EventArgs e)
     {
         int countWork = (int)((Control)sender).Tag;
-        var newForm = new PrintAllWorkUI(admin.GetListWork()[countWork].GetFullInfo(), new List<GetInfo>(), admin);
-        newForm.Show();
+        //var newForm = new PrintAllWorkUI(admin.GetListWork()[countWork].GetFullInfo(), new List<GetInfo>(), admin);
+        //newForm.Show();
+        MessageBox.Show(admin.GetListWork()[countWork].GetFullInfo(), "Описание работы");
     }
 }

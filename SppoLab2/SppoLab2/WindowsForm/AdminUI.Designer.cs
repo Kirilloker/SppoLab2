@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.CreateStudent = new System.Windows.Forms.Button();
-            this.CheckAllStudent = new System.Windows.Forms.Button();
-            this.CreateCourse = new System.Windows.Forms.Button();
-            this.CreateWork = new System.Windows.Forms.Button();
-            this.CreateTask = new System.Windows.Forms.Button();
+            this.CreateStudentButton = new System.Windows.Forms.Button();
+            this.PrintAllStudentButton = new System.Windows.Forms.Button();
+            this.CreateCourseButton = new System.Windows.Forms.Button();
+            this.CreateWorkButton = new System.Windows.Forms.Button();
+            this.CreateTaskButton = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.PrintCourse = new System.Windows.Forms.Button();
-            this.PrintWork = new System.Windows.Forms.Button();
-            this.PrintTask = new System.Windows.Forms.Button();
+            this.PrintAllCourseButton = new System.Windows.Forms.Button();
+            this.PrintAllWorkButton = new System.Windows.Forms.Button();
+            this.PrintAllTaskButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -52,107 +52,107 @@
             this.label1.Text = "Администратор";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // CreateStudent
+            // CreateStudentButton
             // 
-            this.CreateStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CreateStudent.Location = new System.Drawing.Point(354, 83);
-            this.CreateStudent.Name = "CreateStudent";
-            this.CreateStudent.Size = new System.Drawing.Size(298, 48);
-            this.CreateStudent.TabIndex = 1;
-            this.CreateStudent.Text = "Зарегистировать Студента";
-            this.CreateStudent.UseVisualStyleBackColor = true;
-            this.CreateStudent.Click += new System.EventHandler(this.CreateNewStudent);
+            this.CreateStudentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CreateStudentButton.Location = new System.Drawing.Point(354, 83);
+            this.CreateStudentButton.Name = "CreateStudentButton";
+            this.CreateStudentButton.Size = new System.Drawing.Size(298, 48);
+            this.CreateStudentButton.TabIndex = 1;
+            this.CreateStudentButton.Text = "Зарегистировать Студента";
+            this.CreateStudentButton.UseVisualStyleBackColor = true;
+            this.CreateStudentButton.Click += new System.EventHandler(this.CreateStudent);
             // 
-            // CheckAllStudent
+            // PrintAllStudentButton
             // 
-            this.CheckAllStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CheckAllStudent.Location = new System.Drawing.Point(12, 83);
-            this.CheckAllStudent.Name = "CheckAllStudent";
-            this.CheckAllStudent.Size = new System.Drawing.Size(312, 48);
-            this.CheckAllStudent.TabIndex = 2;
-            this.CheckAllStudent.Text = "Просмотреть всех студентов";
-            this.CheckAllStudent.UseVisualStyleBackColor = true;
-            this.CheckAllStudent.Click += new System.EventHandler(this.PrintAllStudent);
+            this.PrintAllStudentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PrintAllStudentButton.Location = new System.Drawing.Point(12, 83);
+            this.PrintAllStudentButton.Name = "PrintAllStudentButton";
+            this.PrintAllStudentButton.Size = new System.Drawing.Size(312, 48);
+            this.PrintAllStudentButton.TabIndex = 2;
+            this.PrintAllStudentButton.Text = "Просмотреть всех студентов";
+            this.PrintAllStudentButton.UseVisualStyleBackColor = true;
+            this.PrintAllStudentButton.Click += new System.EventHandler(this.PrintAllStudent);
             // 
-            // CreateCourse
+            // CreateCourseButton
             // 
-            this.CreateCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CreateCourse.Location = new System.Drawing.Point(12, 152);
-            this.CreateCourse.Name = "CreateCourse";
-            this.CreateCourse.Size = new System.Drawing.Size(197, 48);
-            this.CreateCourse.TabIndex = 2;
-            this.CreateCourse.Text = "Создать курс";
-            this.CreateCourse.UseVisualStyleBackColor = true;
-            this.CreateCourse.Click += new System.EventHandler(this.CreateNewCourse);
+            this.CreateCourseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CreateCourseButton.Location = new System.Drawing.Point(12, 152);
+            this.CreateCourseButton.Name = "CreateCourseButton";
+            this.CreateCourseButton.Size = new System.Drawing.Size(197, 48);
+            this.CreateCourseButton.TabIndex = 2;
+            this.CreateCourseButton.Text = "Создать курс";
+            this.CreateCourseButton.UseVisualStyleBackColor = true;
+            this.CreateCourseButton.Click += new System.EventHandler(this.CreateNewCourse);
             // 
-            // CreateWork
+            // CreateWorkButton
             // 
-            this.CreateWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CreateWork.Location = new System.Drawing.Point(236, 152);
-            this.CreateWork.Name = "CreateWork";
-            this.CreateWork.Size = new System.Drawing.Size(197, 48);
-            this.CreateWork.TabIndex = 2;
-            this.CreateWork.Text = "Создать работу";
-            this.CreateWork.UseVisualStyleBackColor = true;
-            this.CreateWork.Click += new System.EventHandler(this.CreateNewWork);
+            this.CreateWorkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CreateWorkButton.Location = new System.Drawing.Point(236, 152);
+            this.CreateWorkButton.Name = "CreateWorkButton";
+            this.CreateWorkButton.Size = new System.Drawing.Size(197, 48);
+            this.CreateWorkButton.TabIndex = 2;
+            this.CreateWorkButton.Text = "Создать работу";
+            this.CreateWorkButton.UseVisualStyleBackColor = true;
+            this.CreateWorkButton.Click += new System.EventHandler(this.CreateWork);
             // 
-            // CreateTask
+            // CreateTaskButton
             // 
-            this.CreateTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CreateTask.Location = new System.Drawing.Point(455, 152);
-            this.CreateTask.Name = "CreateTask";
-            this.CreateTask.Size = new System.Drawing.Size(197, 48);
-            this.CreateTask.TabIndex = 2;
-            this.CreateTask.Text = "Создать задание";
-            this.CreateTask.UseVisualStyleBackColor = true;
-            this.CreateTask.Click += new System.EventHandler(this.CreateNewTask);
+            this.CreateTaskButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CreateTaskButton.Location = new System.Drawing.Point(455, 152);
+            this.CreateTaskButton.Name = "CreateTaskButton";
+            this.CreateTaskButton.Size = new System.Drawing.Size(197, 48);
+            this.CreateTaskButton.TabIndex = 2;
+            this.CreateTaskButton.Text = "Создать задание";
+            this.CreateTaskButton.UseVisualStyleBackColor = true;
+            this.CreateTaskButton.Click += new System.EventHandler(this.CreateTask);
             // 
-            // PrintCourse
+            // PrintAllCourseButton
             // 
-            this.PrintCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PrintCourse.Location = new System.Drawing.Point(12, 228);
-            this.PrintCourse.Name = "PrintCourse";
-            this.PrintCourse.Size = new System.Drawing.Size(197, 62);
-            this.PrintCourse.TabIndex = 2;
-            this.PrintCourse.Text = "Посмотреть курсы";
-            this.PrintCourse.UseVisualStyleBackColor = true;
-            this.PrintCourse.Click += new System.EventHandler(this.PrintAllCourse);
+            this.PrintAllCourseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PrintAllCourseButton.Location = new System.Drawing.Point(12, 228);
+            this.PrintAllCourseButton.Name = "PrintAllCourseButton";
+            this.PrintAllCourseButton.Size = new System.Drawing.Size(197, 62);
+            this.PrintAllCourseButton.TabIndex = 2;
+            this.PrintAllCourseButton.Text = "Посмотреть курсы";
+            this.PrintAllCourseButton.UseVisualStyleBackColor = true;
+            this.PrintAllCourseButton.Click += new System.EventHandler(this.PrintAllCourse);
             // 
-            // PrintWork
+            // PrintAllWorkButton
             // 
-            this.PrintWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PrintWork.Location = new System.Drawing.Point(236, 228);
-            this.PrintWork.Name = "PrintWork";
-            this.PrintWork.Size = new System.Drawing.Size(197, 62);
-            this.PrintWork.TabIndex = 2;
-            this.PrintWork.Text = "Посмотреть работы";
-            this.PrintWork.UseVisualStyleBackColor = true;
-            this.PrintWork.Click += new System.EventHandler(this.PrintAllWork);
+            this.PrintAllWorkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PrintAllWorkButton.Location = new System.Drawing.Point(236, 228);
+            this.PrintAllWorkButton.Name = "PrintAllWorkButton";
+            this.PrintAllWorkButton.Size = new System.Drawing.Size(197, 62);
+            this.PrintAllWorkButton.TabIndex = 2;
+            this.PrintAllWorkButton.Text = "Посмотреть работы";
+            this.PrintAllWorkButton.UseVisualStyleBackColor = true;
+            this.PrintAllWorkButton.Click += new System.EventHandler(this.PrintAllWork);
             // 
-            // PrintTask
+            // PrintAllTaskButton
             // 
-            this.PrintTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PrintTask.Location = new System.Drawing.Point(455, 228);
-            this.PrintTask.Name = "PrintTask";
-            this.PrintTask.Size = new System.Drawing.Size(197, 62);
-            this.PrintTask.TabIndex = 2;
-            this.PrintTask.Text = "Посмотреть задания";
-            this.PrintTask.UseVisualStyleBackColor = true;
-            this.PrintTask.Click += new System.EventHandler(this.PrintAllTask);
+            this.PrintAllTaskButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PrintAllTaskButton.Location = new System.Drawing.Point(455, 228);
+            this.PrintAllTaskButton.Name = "PrintAllTaskButton";
+            this.PrintAllTaskButton.Size = new System.Drawing.Size(197, 62);
+            this.PrintAllTaskButton.TabIndex = 2;
+            this.PrintAllTaskButton.Text = "Посмотреть задания";
+            this.PrintAllTaskButton.UseVisualStyleBackColor = true;
+            this.PrintAllTaskButton.Click += new System.EventHandler(this.PrintAllTask);
             // 
             // AdminUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 396);
-            this.Controls.Add(this.CreateTask);
-            this.Controls.Add(this.CreateWork);
-            this.Controls.Add(this.PrintTask);
-            this.Controls.Add(this.PrintWork);
-            this.Controls.Add(this.PrintCourse);
-            this.Controls.Add(this.CreateCourse);
-            this.Controls.Add(this.CheckAllStudent);
-            this.Controls.Add(this.CreateStudent);
+            this.Controls.Add(this.CreateTaskButton);
+            this.Controls.Add(this.CreateWorkButton);
+            this.Controls.Add(this.PrintAllTaskButton);
+            this.Controls.Add(this.PrintAllWorkButton);
+            this.Controls.Add(this.PrintAllCourseButton);
+            this.Controls.Add(this.CreateCourseButton);
+            this.Controls.Add(this.PrintAllStudentButton);
+            this.Controls.Add(this.CreateStudentButton);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdminUI";
@@ -165,14 +165,14 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button CreateStudent;
-        private System.Windows.Forms.Button CheckAllStudent;
-        private System.Windows.Forms.Button CreateCourse;
-        private System.Windows.Forms.Button CreateWork;
-        private System.Windows.Forms.Button CreateTask;
+        private System.Windows.Forms.Button CreateStudentButton;
+        private System.Windows.Forms.Button PrintAllStudentButton;
+        private System.Windows.Forms.Button CreateCourseButton;
+        private System.Windows.Forms.Button CreateWorkButton;
+        private System.Windows.Forms.Button CreateTaskButton;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Button PrintCourse;
-        private System.Windows.Forms.Button PrintWork;
-        private System.Windows.Forms.Button PrintTask;
+        private System.Windows.Forms.Button PrintAllCourseButton;
+        private System.Windows.Forms.Button PrintAllWorkButton;
+        private System.Windows.Forms.Button PrintAllTaskButton;
     }
 }

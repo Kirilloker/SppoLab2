@@ -9,10 +9,12 @@ using System.Windows.Forms;
 
 namespace SppoLab2.Script;
 
-internal class PrintAllTaskUI : PrintFunctional
+internal class PrintAllTaskUI : SketchForm
 {
-    public PrintAllTaskUI(String _mainLabel, List<GetInfo> _labels, Admin _admin) : base(_mainLabel, _labels, _admin)
+    public PrintAllTaskUI()
     {
+        CreateWindows("Список всех заданий", new List<GetInfo>(admin.GetListTasks()));
+
         CreateButtonInPanel("Удалить", DeleteTask);
     }
 
@@ -21,7 +23,7 @@ internal class PrintAllTaskUI : PrintFunctional
         int countTask = (int)((Control)sender).Tag;
         admin.DeleteTask(countTask);
 
-        var newForm = new PrintAllTaskUI(MainLabel.Text, new List<GetInfo>(admin.GetListTasks()), admin);
+        var newForm = new PrintAllTaskUI();
         newForm.Show();
         this.Close();
     }

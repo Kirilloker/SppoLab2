@@ -1,6 +1,6 @@
 ﻿namespace SppoLab2.WindowsForm
 {
-    partial class PrintFunctional
+    partial class SketchForm
     {
         /// <summary>
         /// Required designer variable.

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace SppoLab2.WindowsForm;
 
-public partial class PrintFunctional : Form
+public partial class SketchForm : Form
 {
     protected List<GetInfo> text = new List<GetInfo>();
     protected List<List<Button>> buttonsInPanel = new List<List<Button>>();
@@ -20,48 +20,23 @@ public partial class PrintFunctional : Form
     protected List<Label> labels = new List<Label>();
     protected List<TextBox> textBox = new List<TextBox>();
     protected delegate void ButtonFunction(object sender, EventArgs e);
-    protected Admin admin;
+    protected Admin admin = Admin.getInstance();
     protected Student student;
 
-    public PrintFunctional(String _mainLabel, List<GetInfo> _text, Admin _admin, Student _student)
+    public SketchForm(String _mainLabel, List<GetInfo> _text, Student _student)
     {
-        admin = _admin;
+        CreateWindows(_mainLabel, _text);
         student = _student;
-        CreateWindows(_mainLabel, _text);
-    }
-    public PrintFunctional(String _mainLabel, List<GetInfo> _text, Admin _admin)
-    {
-        admin = _admin;
-        CreateWindows(_mainLabel, _text);
     }
 
-
-    public PrintFunctional(String _mainLabel, List<GetInfo> _text, Student _student)
+    public SketchForm(String _mainLabel, List<GetInfo> _text)
     {
-        student = _student;
         CreateWindows(_mainLabel, _text);
     }
 
-    public PrintFunctional(String _mainLabel, List<GetInfo> _text)
+    public SketchForm()
     {
-        InitializeComponent();
-
-        text = _text;
-        MainLabel.Text = _mainLabel;
-
-        string[] test = _mainLabel.Split('\n');
-
-        int xPosition = (this.Size.Width - _mainLabel.Length * 15) / 2;
-
-        if (xPosition < 0)
-        {
-            xPosition = 40;
-        }
-
-        MainLabel.Location = new Point(xPosition, 10);
-
-        CreateLabelsInPanel();
-        CreateScrollBar();
+        CreateWindows("", new List<GetInfo>());
     }
 
     public void CreateWindows(String _mainLabel, List<GetInfo> _text)
@@ -71,11 +46,9 @@ public partial class PrintFunctional : Form
         text = _text;
         MainLabel.Text = _mainLabel;
 
-        string[] test = _mainLabel.Split('\n');
-
         int xPosition = (this.Size.Width - _mainLabel.Length * 15) / 2;
 
-        if (xPosition < 0)
+        if (xPosition < 40)
         {
             xPosition = 40;
         }
@@ -99,6 +72,7 @@ public partial class PrintFunctional : Form
             label.Size = new Size(300,40);
             
             panel1.Controls.Add(label); 
+            this.Controls.Add(label); 
 
             labels.Add(label);
         }
