@@ -1,4 +1,5 @@
-﻿using SppoLab2.Script.Users;
+﻿using SppoLab2.Script.Courses;
+using SppoLab2.Script.Users;
 using SppoLab2.WindowsForm;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,17 @@ internal class PrintAllStudentsUI : SketchUI
     {
         CreateWindows("Список всех студентов", new List<GetInfo>(admin.GetListStudents()));
 
+        CreateButtonInPanel("Подробнее", DeepPrintStudent);
         CreateButtonInPanel("Удалить", DeleteStudent);
+    }
+
+    private void DeepPrintStudent(object sender, EventArgs e)
+    {
+        int numberStundent = (int)((Control)sender).Tag;
+        string text = admin.GetListStudents()[numberStundent].GetFullInfo();
+
+        var newWindow = new Print(text);
+        newWindow.Show();
     }
 
     private void DeleteStudent(object sender, EventArgs e)

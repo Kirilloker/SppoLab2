@@ -18,10 +18,21 @@ public class Student : GetInfo
 
     public string GetFullInfo()
     {
-        return ("Студент\n" +
+        string str = ("Студент\n" +
                 "Имя: " + name + "\n" +
                 "Группа: " + group + "\n"
                 );
+
+        if (myCourse.Count > 0)
+        {
+            str += "\n\nПодписан на курсы:\n";
+            for (int i = 0; i < myCourse.Count; i++)
+            {
+                str += myCourse[i].GetShortInfo();
+            }
+        }
+
+        return str;
     }
 
     public string GetShortInfo()

@@ -100,7 +100,7 @@
             // 
             this.CheckCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CheckCourse.Location = new System.Drawing.Point(48, 241);
-            this.CheckCourse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CheckCourse.Margin = new System.Windows.Forms.Padding(2);
             this.CheckCourse.Name = "CheckCourse";
             this.CheckCourse.Size = new System.Drawing.Size(251, 81);
             this.CheckCourse.TabIndex = 2;
@@ -112,7 +112,7 @@
             // 
             this.SubscribeCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SubscribeCourse.Location = new System.Drawing.Point(488, 241);
-            this.SubscribeCourse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SubscribeCourse.Margin = new System.Windows.Forms.Padding(2);
             this.SubscribeCourse.Name = "SubscribeCourse";
             this.SubscribeCourse.Size = new System.Drawing.Size(251, 81);
             this.SubscribeCourse.TabIndex = 2;
@@ -132,7 +132,7 @@
             this.Controls.Add(this.LabelGroup);
             this.Controls.Add(this.LabelFIO);
             this.Controls.Add(this.StudentLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "StudentUI";
             this.Text = "StudentUI";
             this.Load += new System.EventHandler(this.StudentUI_Load);

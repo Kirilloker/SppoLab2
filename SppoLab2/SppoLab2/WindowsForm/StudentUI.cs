@@ -52,5 +52,10 @@ namespace SppoLab2.WindowsForm
                 Application.Run(new SubscribeCourse(student));
             })).Start();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }

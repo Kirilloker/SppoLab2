@@ -57,6 +57,9 @@ internal class SubscribeCourse : SketchUI
         int countCourse = (int)((Control)sender).Tag;
         //var newForm = new PrintCourseStudent(admin.GetListCourse()[countCourse].GetFullInfo(), new List<GetInfo>(), student);
         //newForm.Show();
-        MessageBox.Show(admin.GetListCourse()[countCourse].GetFullInfo(), "Описание Курса");
+
+        //MessageBox.Show(admin.GetListCourse()[countCourse].GetFullInfo(), "Описание Курса");
+        var newForm = new Print(admin.GetListCourse()[countCourse].GetFullInfo());
+        newForm.Show();
     }
 }

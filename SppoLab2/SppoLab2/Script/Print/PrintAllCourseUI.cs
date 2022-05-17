@@ -35,6 +35,8 @@ internal class PrintAllCourseUI : SketchUI
         int countCourse= (int)((Control)sender).Tag;
         //var newForm = new PrintAllCourseUI(admin.GetListCourse()[countCourse].GetFullInfo(), new List<GetInfo>(), admin);
         //newForm.Show();
-        MessageBox.Show(admin.GetListCourse()[countCourse].GetFullInfo(), "Описание курса");
+        //MessageBox.Show(admin.GetListCourse()[countCourse].GetFullInfo(), "Описание курса");
+        var newForm = new Print(admin.GetListCourse()[countCourse].GetFullInfo());
+        newForm.Show();
     }
 }

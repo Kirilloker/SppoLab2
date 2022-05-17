@@ -52,7 +52,7 @@
     <Compile Include="Script\Print\PrintAllStudentsUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Script\Course.cs" />
+    <Compile Include="Script\Working\Course.cs" />
     <Compile Include="Script\Create\CreateCourseUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +110,12 @@
     <Compile Include="WindowsForm\LogInUI.Designer.cs">
       <DependentUpon>LogInUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="WindowsForm\Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\Print.Designer.cs">
+      <DependentUpon>Print.cs</DependentUpon>
+    </Compile>
     <Compile Include="WindowsForm\SketchUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WindowsForm\LogInUI.resx">
       <DependentUpon>LogInUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\Print.resx">
+      <DependentUpon>Print.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WindowsForm\SketchUI.resx">
       <DependentUpon>SketchUI.cs</DependentUpon>

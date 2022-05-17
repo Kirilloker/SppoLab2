@@ -24,15 +24,27 @@ public class Course :  GetInfo
     public string GetFullInfo()
     {
         string str =
-            "Дисциплина:" + "'" + name + "'" + "\n" +
-            "Описание: " + сourseDiscription + "\n" +
-            "Количество свободных мест: " + freePlace + "\n" +
+            "Дисциплина:" + "'" + name + "'" + "\n\n" +
+            "Описание: " + сourseDiscription + "\n\n" +
+            "Количество свободных мест: " + freePlace + "\n\n" +
             "Работы:" + "\n";
 
         for (int i = 0; i < works.Count; i++)
         {
             str += "    " + (i + 1).ToString() + ". " + works[i].GetFullInfo() + "\n";
         }
+
+        if (subscribeStudents.Count > 0)
+        {
+            str += "\n\nНа курс подписаны:\n";
+            for (int i = 0; i < subscribeStudents.Count; i++)
+            {
+                str += "\t" + subscribeStudents[i].GetShortInfo();
+            }
+            
+        }
+
+        str += "\n\n";
 
         return str;
     }

@@ -34,6 +34,8 @@ internal class PrintAllWorkUI : SketchUI
         int countWork = (int)((Control)sender).Tag;
         //var newForm = new PrintAllWorkUI(admin.GetListWork()[countWork].GetFullInfo(), new List<GetInfo>(), admin);
         //newForm.Show();
-        MessageBox.Show(admin.GetListWork()[countWork].GetFullInfo(), "Описание работы");
+        //MessageBox.Show(admin.GetListWork()[countWork].GetFullInfo(), "Описание работы");
+        var newForm = new Print(admin.GetListWork()[countWork].GetFullInfo());
+        newForm.Show();
     }
 }

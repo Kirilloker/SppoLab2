@@ -10,5 +10,6 @@ D:\Github\SppoLab2\SppoLab2\SppoLab2\obj\Debug\SppoLab2.exe
 D:\Github\SppoLab2\SppoLab2\SppoLab2\obj\Debug\SppoLab2.pdb
 D:\Github\SppoLab2\SppoLab2\SppoLab2\obj\Debug\SppoLab2.WindowsForm.StudentUI.resources
 D:\Github\SppoLab2\SppoLab2\SppoLab2\obj\Debug\SppoLab2.WindowsForm.AdminUI.resources
-D:\Github\SppoLab2\SppoLab2\SppoLab2\obj\Debug\SppoLab2.WindowsForm.LogIn.resources
-D:\Github\SppoLab2\SppoLab2\SppoLab2\obj\Debug\SppoLab2.WindowsForm.SketchForm.resources
+D:\Github\SppoLab2\SppoLab2\SppoLab2\obj\Debug\SppoLab2.WindowsForm.LogInUI.resources
+D:\Github\SppoLab2\SppoLab2\SppoLab2\obj\Debug\SppoLab2.WindowsForm.Print.resources
+D:\Github\SppoLab2\SppoLab2\SppoLab2\obj\Debug\SppoLab2.WindowsForm.SketchUI.resources
