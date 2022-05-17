@@ -67,7 +67,28 @@ public class Course :  GetInfo
 
     public bool AddStudentWithProtected(Student student)
     {
-        return false;
+        lock (this)
+        {
+            if (freePlace <= 0)
+            {
+                System.Console.WriteLine("мест уже нет");
+                return false;
+            }
+
+            if (subscribeStudents.Contains(student) == false)
+            {
+                subscribeStudents.Add(student);
+                student.AddCourse(this);
+
+                // Симуляция сложного алгоритма хэширования который нужен чтобы записать студента на курс
+                Thread.Sleep(5000);
+
+                freePlace--;
+                return true;
+            }
+
+            return false;
+        }
     }
 
     public bool AddStudentNoProtected(Student student)
