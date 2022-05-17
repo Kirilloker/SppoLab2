@@ -26,6 +26,7 @@ public class Course:  GetInfo, System.IDisposable
     public string GetFullInfo()
     {
         m_lock.EnterReadLock();
+        Thread.Sleep(5000);
         string str =
             "Дисциплина:" + "'" + name + "'" + "\n\n" +
             "Описание: " + сourseDiscription + "\n\n" +
