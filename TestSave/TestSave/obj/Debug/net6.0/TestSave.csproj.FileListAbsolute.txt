@@ -1,0 +1,15 @@
+D:\Github\SppoLab2\TestSave\TestSave\bin\Debug\net6.0\TestSave.exe
+D:\Github\SppoLab2\TestSave\TestSave\bin\Debug\net6.0\TestSave.deps.json
+D:\Github\SppoLab2\TestSave\TestSave\bin\Debug\net6.0\TestSave.runtimeconfig.json
+D:\Github\SppoLab2\TestSave\TestSave\bin\Debug\net6.0\TestSave.dll
+D:\Github\SppoLab2\TestSave\TestSave\bin\Debug\net6.0\TestSave.pdb
+D:\Github\SppoLab2\TestSave\TestSave\obj\Debug\net6.0\TestSave.csproj.AssemblyReference.cache
+D:\Github\SppoLab2\TestSave\TestSave\obj\Debug\net6.0\TestSave.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github\SppoLab2\TestSave\TestSave\obj\Debug\net6.0\TestSave.AssemblyInfoInputs.cache
+D:\Github\SppoLab2\TestSave\TestSave\obj\Debug\net6.0\TestSave.AssemblyInfo.cs
+D:\Github\SppoLab2\TestSave\TestSave\obj\Debug\net6.0\TestSave.csproj.CoreCompileInputs.cache
+D:\Github\SppoLab2\TestSave\TestSave\obj\Debug\net6.0\TestSave.dll
+D:\Github\SppoLab2\TestSave\TestSave\obj\Debug\net6.0\refint\TestSave.dll
+D:\Github\SppoLab2\TestSave\TestSave\obj\Debug\net6.0\TestSave.pdb
+D:\Github\SppoLab2\TestSave\TestSave\obj\Debug\net6.0\TestSave.genruntimeconfig.cache
+D:\Github\SppoLab2\TestSave\TestSave\obj\Debug\net6.0\ref\TestSave.dll

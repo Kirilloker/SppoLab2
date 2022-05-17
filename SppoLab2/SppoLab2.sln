@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SppoLab2", "SppoLab2\SppoLab2.csproj", "{17EE0541-6A85-45EE-9242-1C4C19688560}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17EE0541-6A85-45EE-9242-1C4C19688560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17EE0541-6A85-45EE-9242-1C4C19688560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17EE0541-6A85-45EE-9242-1C4C19688560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17EE0541-6A85-45EE-9242-1C4C19688560}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {91CCE93E-1AF1-48E8-AD3D-8F588C4FC2CC}
+	EndGlobalSection
+EndGlobal

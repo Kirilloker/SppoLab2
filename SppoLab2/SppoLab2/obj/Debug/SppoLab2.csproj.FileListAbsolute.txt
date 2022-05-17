@@ -1,0 +1,17 @@
+D:\Github\SppoLab2\SppoLab2\SppoLab2\obj\Debug\SppoLab2.csproj.AssemblyReference.cache
+D:\Github\SppoLab2\SppoLab2\SppoLab2\obj\Debug\SppoLab2.csproj.SuggestedBindingRedirects.cache
+D:\Github\SppoLab2\SppoLab2\SppoLab2\obj\Debug\SppoLab2.Properties.Resources.resources
+D:\Github\SppoLab2\SppoLab2\SppoLab2\obj\Debug\SppoLab2.csproj.GenerateResource.cache
+D:\Github\SppoLab2\SppoLab2\SppoLab2\obj\Debug\SppoLab2.csproj.CoreCompileInputs.cache
+D:\Github\SppoLab2\SppoLab2\SppoLab2\bin\Debug\SppoLab2.exe.config
+D:\Github\SppoLab2\SppoLab2\SppoLab2\bin\Debug\SppoLab2.exe
+D:\Github\SppoLab2\SppoLab2\SppoLab2\bin\Debug\SppoLab2.pdb
+D:\Github\SppoLab2\SppoLab2\SppoLab2\obj\Debug\SppoLab2.exe
+D:\Github\SppoLab2\SppoLab2\SppoLab2\obj\Debug\SppoLab2.pdb
+D:\Github\SppoLab2\SppoLab2\SppoLab2\obj\Debug\SppoLab2.WindowsForm.StudentUI.resources
+D:\Github\SppoLab2\SppoLab2\SppoLab2\obj\Debug\SppoLab2.WindowsForm.AdminUI.resources
+D:\Github\SppoLab2\SppoLab2\SppoLab2\obj\Debug\SppoLab2.WindowsForm.CreateStudent.resources
+D:\Github\SppoLab2\SppoLab2\SppoLab2\obj\Debug\SppoLab2.WindowsForm.WarningUI.resources
+D:\Github\SppoLab2\SppoLab2\SppoLab2\obj\Debug\SppoLab2.WindowsForm.CheckAllStudents.resources
+D:\Github\SppoLab2\SppoLab2\SppoLab2\obj\Debug\SppoLab2.WindowsForm.LogIn.resources
+D:\Github\SppoLab2\SppoLab2\SppoLab2\obj\Debug\SppoLab2.WindowsForm.PrintFunctional.resources
