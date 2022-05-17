@@ -37,7 +37,8 @@ namespace SppoLab2.WindowsForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            adminUI.Show();
+            var NewForm = new AdminUI();
+            NewForm.Show();
         }
     }
 }

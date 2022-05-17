@@ -5,14 +5,16 @@ using SppoLab2.Script.Workinging;
 
 namespace SppoLab2.Script.Courses;
 
-public class Course :  GetInfo
+public class Course:  GetInfo, System.IDisposable
 {
     private string name;
     private string сourseDiscription;
     private List<Work> works = new List<Work>();
     private int freePlace;
-
     private List<Student> subscribeStudents = new List<Student>();
+
+    private readonly ReaderWriterLockSlim m_lock =
+    new ReaderWriterLockSlim(LockRecursionPolicy.NoRecursion);
 
     public Course(string _name, string _CourseDiscritption, int _freePlace)
     {
@@ -23,6 +25,7 @@ public class Course :  GetInfo
 
     public string GetFullInfo()
     {
+        m_lock.EnterReadLock();
         string str =
             "Дисциплина:" + "'" + name + "'" + "\n\n" +
             "Описание: " + сourseDiscription + "\n\n" +
@@ -45,7 +48,7 @@ public class Course :  GetInfo
         }
 
         str += "\n\n";
-
+        m_lock.ExitReadLock();
         return str;
     }
 
@@ -67,28 +70,31 @@ public class Course :  GetInfo
 
     public bool AddStudentWithProtected(Student student)
     {
-        lock (this)
+        m_lock.EnterWriteLock();
+       
+        if (freePlace <= 0)
         {
-            if (freePlace <= 0)
-            {
-                System.Console.WriteLine("мест уже нет");
-                return false;
-            }
-
-            if (subscribeStudents.Contains(student) == false)
-            {
-                subscribeStudents.Add(student);
-                student.AddCourse(this);
-
-                // Симуляция сложного алгоритма хэширования который нужен чтобы записать студента на курс
-                Thread.Sleep(5000);
-
-                freePlace--;
-                return true;
-            }
-
+            System.Console.WriteLine("мест уже нет");
+            m_lock.ExitWriteLock();
             return false;
         }
+
+        // Симуляция сложного алгоритма хэширования который нужен чтобы записать студента на курс
+        Thread.Sleep(5000);
+
+        if (subscribeStudents.Contains(student) == false)
+        {
+            subscribeStudents.Add(student);
+            student.AddCourse(this);
+
+            freePlace--;
+            m_lock.ExitWriteLock();
+            return true;
+        }
+
+        m_lock.ExitWriteLock();
+        return false;
+        
     }
 
     public bool AddStudentNoProtected(Student student)
@@ -124,4 +130,6 @@ public class Course :  GetInfo
             freePlace++;
         }
     }
+
+    public void Dispose() { m_lock.Dispose(); }
 }
