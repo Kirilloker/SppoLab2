@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace SppoLab2.WindowsForm;
 
-public partial class SketchForm : Form
+public partial class SketchUI : Form
 {
     protected List<GetInfo> text = new List<GetInfo>();
     protected List<List<Button>> buttonsInPanel = new List<List<Button>>();
@@ -23,20 +23,19 @@ public partial class SketchForm : Form
     protected Admin admin = Admin.getInstance();
     protected Student student;
 
-    public SketchForm(String _mainLabel, List<GetInfo> _text, Student _student)
+    public SketchUI(String _mainLabel, List<GetInfo> _text, Student _student)
     {
         CreateWindows(_mainLabel, _text);
         student = _student;
     }
 
-    public SketchForm(String _mainLabel, List<GetInfo> _text)
+    public SketchUI(String _mainLabel, List<GetInfo> _text)
     {
         CreateWindows(_mainLabel, _text);
     }
 
-    public SketchForm()
+    public SketchUI()
     {
-        CreateWindows("", new List<GetInfo>());
     }
 
     public void CreateWindows(String _mainLabel, List<GetInfo> _text)
@@ -70,12 +69,13 @@ public partial class SketchForm : Form
             label.Location = new Point(10, 20 + 60 * i);
             label.Font = new Font(DefaultFont.Name, 12);
             label.Size = new Size(300,40);
-            
+           
             panel1.Controls.Add(label); 
-            this.Controls.Add(label); 
+
 
             labels.Add(label);
         }
+        
     }
 
     protected void CreateTextBox()
@@ -101,6 +101,11 @@ public partial class SketchForm : Form
         panel1.HorizontalScroll.Enabled = false;
         panel1.HorizontalScroll.Visible = false;
         panel1.HorizontalScroll.Maximum = 0;
+
+        panel1.VerticalScroll.Enabled = false;
+        panel1.VerticalScroll.Visible = false;
+        panel1.VerticalScroll.Maximum = 0;
+
         panel1.AutoScroll = true;
     }
 
@@ -163,6 +168,11 @@ public partial class SketchForm : Form
     }
 
     private void MainLabel_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void panel1_Paint_1(object sender, PaintEventArgs e)
     {
 
     }

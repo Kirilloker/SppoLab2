@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace SppoLab2.Script;
 
-internal class AddAllWorksUI : SketchForm
+internal class AddAllWorksUI : SketchUI
 {
     public AddAllWorksUI(List<Work> _works)
     {

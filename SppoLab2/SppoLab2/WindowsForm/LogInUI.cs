@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace SppoLab2.WindowsForm
 {
-    public partial class LogIn : Form
+    public partial class LogInUI : Form
     {
         AdminUI adminUI = new AdminUI();
 
-        public LogIn()
+        public LogInUI()
         {
             InitializeComponent();
         }

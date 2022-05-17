@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace SppoLab2.Script;
 
-internal class PrintAllCourseUI : SketchForm
+internal class PrintAllCourseUI : SketchUI
 {
     public PrintAllCourseUI() 
     {

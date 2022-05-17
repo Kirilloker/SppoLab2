@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SppoLab2.Script;
 
-internal class CreateWorkUI : SketchForm
+internal class CreateWorkUI : SketchUI
 {
     public CreateWorkUI()
     {

@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace SppoLab2.Script;
 
-internal class PrintAllStudentsUI : SketchForm
+internal class PrintAllStudentsUI : SketchUI
 {
     public PrintAllStudentsUI() 
     {

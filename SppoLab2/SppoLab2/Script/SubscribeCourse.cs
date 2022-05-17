@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace SppoLab2.Script;
 
-internal class SubscribeCourse : SketchForm
+internal class SubscribeCourse : SketchUI
 {
     public SubscribeCourse(Student _student) 
     {

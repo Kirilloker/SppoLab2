@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace SppoLab2.Script;
 
-internal class AddTaskUI : SketchForm
+internal class AddTaskUI : SketchUI
 {
     public AddTaskUI(List<Task> _tasks)
     {

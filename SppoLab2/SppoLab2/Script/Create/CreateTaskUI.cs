@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace SppoLab2.Script;
 
-internal class CreateTaskUI : SketchForm
+internal class CreateTaskUI : SketchUI
 {
     public CreateTaskUI()
     {
@@ -14,7 +14,6 @@ internal class CreateTaskUI : SketchForm
         line.Add(new Task("Текст задания:"));
 
         CreateWindows("Создание задания", new List<GetInfo>(line));
-
         CreateTextBox();
         CreateButton("Сохранить", SaveTask);
     }

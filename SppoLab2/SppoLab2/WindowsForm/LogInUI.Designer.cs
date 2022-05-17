@@ -1,6 +1,6 @@
 ﻿namespace SppoLab2.WindowsForm
 {
-    partial class LogIn
+    partial class LogInUI
     {
         /// <summary>
         /// Required designer variable.

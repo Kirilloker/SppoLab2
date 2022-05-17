@@ -1,6 +1,6 @@
 ﻿namespace SppoLab2.WindowsForm
 {
-    partial class SketchForm
+    partial class SketchUI
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
             this.MainLabel = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(27, 67);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(719, 353);
-            this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // MainLabel
             // 
@@ -51,14 +43,24 @@
             this.MainLabel.TabIndex = 1;
             this.MainLabel.Click += new System.EventHandler(this.MainLabel_Click);
             // 
-            // PrintFunctional
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(22, 96);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(723, 337);
+            this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
+            // 
+            // SketchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(787, 515);
-            this.Controls.Add(this.MainLabel);
             this.Controls.Add(this.panel1);
-            this.Name = "PrintFunctional";
+            this.Controls.Add(this.MainLabel);
+            this.Name = "SketchForm";
             this.Text = "PrintFunctional";
             this.Load += new System.EventHandler(this.PrintFunctional_Load);
             this.ResumeLayout(false);
@@ -67,8 +69,7 @@
         }
 
         #endregion
-
-        protected System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.Label MainLabel;
+        protected System.Windows.Forms.Panel panel1;
     }
 }
