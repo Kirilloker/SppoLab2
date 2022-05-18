@@ -49,7 +49,7 @@
             this.label1.Location = new System.Drawing.Point(108, 7);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(430, 63);
+            this.label1.Size = new System.Drawing.Size(529, 78);
             this.label1.TabIndex = 0;
             this.label1.Text = "Администратор";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -144,9 +144,9 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(151, 348);
+            this.SaveButton.Location = new System.Drawing.Point(259, 348);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(142, 36);
+            this.SaveButton.Size = new System.Drawing.Size(65, 36);
             this.SaveButton.TabIndex = 3;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -154,9 +154,9 @@
             // 
             // LoadButton
             // 
-            this.LoadButton.Location = new System.Drawing.Point(326, 348);
+            this.LoadButton.Location = new System.Drawing.Point(354, 348);
             this.LoadButton.Name = "LoadButton";
-            this.LoadButton.Size = new System.Drawing.Size(142, 36);
+            this.LoadButton.Size = new System.Drawing.Size(79, 36);
             this.LoadButton.TabIndex = 3;
             this.LoadButton.Text = "Load";
             this.LoadButton.UseVisualStyleBackColor = true;

@@ -47,10 +47,8 @@ namespace SppoLab2.WindowsForm
 
         private void SubscribeCourse_Click(object sender, EventArgs e)
         {
-            new Thread(new ThreadStart(delegate
-            {
-                Application.Run(new SubscribeCourse(student));
-            })).Start();
+            var newWindow = new SubscribeCourse(student);
+            newWindow.Show();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

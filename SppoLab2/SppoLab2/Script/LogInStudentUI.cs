@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace SppoLab2.Script;
@@ -21,7 +22,10 @@ internal class LogInStudentUI : SketchUI
     private void InputStudent(object sender, EventArgs e)
     {
         int countCourse = (int)((Control)sender).Tag;
-        var newForm = new StudentUI(admin.GetListStudents()[countCourse], admin);
-        newForm.Show();
+
+        new Thread(new ThreadStart(delegate
+        {
+            Application.Run(new StudentUI(admin.GetListStudents()[countCourse], admin));
+        })).Start();
     }
 }
