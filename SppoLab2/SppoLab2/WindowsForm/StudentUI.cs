@@ -19,8 +19,8 @@ namespace SppoLab2.WindowsForm
             student = _student;
             admin = _admin;
 
-            StudentFIOText.Text = student.name;
-            StudentGroupText.Text = student.group;
+            StudentFIOText.Text = student.Name;
+            StudentGroupText.Text = student.Group;
         }
 
         private void StudentUI_Load(object sender, EventArgs e)

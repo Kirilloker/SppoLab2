@@ -48,6 +48,8 @@ public class Work : GetInfo
         listTask.Add(_task);
     }
 
+    
+
     public string Name
     {
         get { return name; }
@@ -79,6 +81,33 @@ public class Work : GetInfo
             {
                 workDiscription = value;
             }
+        }
+    }
+
+    // Test Save
+
+    public string TypeWork { get { return typeWork; } set { typeWork = value; } }
+    //public List<Task> ListTask { get { return listTask; } set { listTask = value; } }
+
+    public Task[] ListTask
+    {
+        get { return listTask.ToArray(); }
+        set
+        {
+            System.Console.WriteLine("Test Set");
+            List<Task> test = new List<Task>();
+
+            for (int i = 0; i < value.Length; i++)
+            {
+                System.Console.WriteLine(value[i].GetFullInfo());
+            }
+
+            for (int i = 0; i < value.Length; i++)
+            {
+                test.Add(value[i]);
+            }
+
+            listTask = test;
         }
     }
 

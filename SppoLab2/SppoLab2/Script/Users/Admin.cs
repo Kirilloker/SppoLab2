@@ -1,6 +1,12 @@
 ﻿using SppoLab2.Script.Workinging;
 using SppoLab2.Script.Courses;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using System.Text.Json;
+using System.IO;
+using System.Text.Json.Serialization;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
 
 namespace SppoLab2.Script.Users;
 
@@ -8,7 +14,7 @@ public class Admin
 {
     private static Admin instance;
 
-    private Admin() { }
+    public Admin() { }
     public static Admin getInstance()
     {
         if (instance == null)
@@ -46,4 +52,97 @@ public class Admin
     public void DeleteWork(int countWork) { works.RemoveAt(countWork); }
     public void DeleteCourse(int countCourse) { course.RemoveAt(countCourse); }
 
+
+    // Test Save
+
+    public Task[] Tasks { get { return tasks.ToArray(); } 
+        set
+        {
+            List<Task> test = new List<Task>();
+
+            for (int i = 0; i < value.Length; i++)
+            {
+                test.Add(value[i]);
+            }
+
+            tasks = test;
+        } 
+    }
+
+    public Work[] Works
+    {
+        get { return works.ToArray(); }
+        set
+        {
+            List<Work> test = new List<Work>();
+
+            for (int i = 0; i < value.Length; i++)
+            {
+                test.Add(value[i]);
+            }
+
+            works = test;
+        }
+    }
+
+
+    public Student[] Students
+    {
+        get { return students.ToArray(); }
+        set
+        {
+            List<Student> test = new List<Student>();
+
+            for (int i = 0; i < value.Length; i++)
+            {
+                test.Add(value[i]);
+            }
+
+            students = test;
+        }
+    }
+
+
+    public Course[] Course
+    {
+        get { return course.ToArray(); }
+        set
+        {
+            List<Course> test = new List<Course>();
+
+            for (int i = 0; i < value.Length; i++)
+            {
+                test.Add(value[i]);
+            }
+
+            course = test;
+        }
+    }
+
+
+    public void Save()
+    {
+        string json = JsonConvert.SerializeObject(this, Formatting.Indented,
+        new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
+
+        StreamWriter file1 = File.CreateText("SaveData.json");
+        System.Console.WriteLine(file1);
+        file1.WriteLine(json);
+        file1.Close();
+    }
+
+    public void Load()
+    {
+        string data = File.ReadAllText("SaveData.json");
+
+        Admin person = JsonConvert.DeserializeObject<Admin>(data,
+        new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
+
+        Students = person.Students;
+        Course = person.Course;
+        Works = person.Works;
+        Tasks = person.Tasks;
+    }
+
 }
+

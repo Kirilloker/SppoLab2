@@ -38,6 +38,8 @@
             this.PrintAllCourseButton = new System.Windows.Forms.Button();
             this.PrintAllWorkButton = new System.Windows.Forms.Button();
             this.PrintAllTaskButton = new System.Windows.Forms.Button();
+            this.SaveButton = new System.Windows.Forms.Button();
+            this.LoadButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -47,7 +49,7 @@
             this.label1.Location = new System.Drawing.Point(108, 7);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(529, 78);
+            this.label1.Size = new System.Drawing.Size(430, 63);
             this.label1.TabIndex = 0;
             this.label1.Text = "Администратор";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -140,11 +142,33 @@
             this.PrintAllTaskButton.UseVisualStyleBackColor = true;
             this.PrintAllTaskButton.Click += new System.EventHandler(this.PrintAllTask);
             // 
+            // SaveButton
+            // 
+            this.SaveButton.Location = new System.Drawing.Point(151, 348);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(142, 36);
+            this.SaveButton.TabIndex = 3;
+            this.SaveButton.Text = "Save";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
+            // LoadButton
+            // 
+            this.LoadButton.Location = new System.Drawing.Point(326, 348);
+            this.LoadButton.Name = "LoadButton";
+            this.LoadButton.Size = new System.Drawing.Size(142, 36);
+            this.LoadButton.TabIndex = 3;
+            this.LoadButton.Text = "Load";
+            this.LoadButton.UseVisualStyleBackColor = true;
+            this.LoadButton.Click += new System.EventHandler(this.LoadButton_Click);
+            // 
             // AdminUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 396);
+            this.Controls.Add(this.LoadButton);
+            this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.CreateTaskButton);
             this.Controls.Add(this.CreateWorkButton);
             this.Controls.Add(this.PrintAllTaskButton);
@@ -174,5 +198,7 @@
         private System.Windows.Forms.Button PrintAllCourseButton;
         private System.Windows.Forms.Button PrintAllWorkButton;
         private System.Windows.Forms.Button PrintAllTaskButton;
+        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button LoadButton;
     }
 }

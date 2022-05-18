@@ -3,6 +3,7 @@ using System.Threading;
 using SppoLab2.Script.Users;
 using SppoLab2.Script.Workinging;
 
+
 namespace SppoLab2.Script.Courses;
 
 public class Course:  GetInfo, System.IDisposable
@@ -133,4 +134,50 @@ public class Course:  GetInfo, System.IDisposable
     }
 
     public void Dispose() { m_lock.Dispose(); }
+
+    // Test Save
+
+    public string Name { get { return name; } set { name = value; } }
+    public string CourseDiscription { get { return сourseDiscription; } set { сourseDiscription = value; } }
+    public int FreePlace { get { return freePlace; } set { freePlace = value; } }
+    //public List<Work> Works { get { return works; } set { works = value; } }
+    //public List<Student> SubscribeStudents { get { return subscribeStudents; } set { subscribeStudents = value; } }
+    public Work[] Works
+    {
+        get { return works.ToArray(); }
+        set
+        {
+            List<Work> test = new List<Work>();
+
+            for (int i = 0; i < value.Length; i++)
+            {
+                test.Add(value[i]);
+            }
+
+            works = test;
+        }
+    }
+    public Student[] SubscribeStudents
+    {
+        get { return subscribeStudents.ToArray(); }
+        set
+        {
+            List<Student> test = new List<Student>();
+
+            for (int i = 0; i < value.Length; i++)
+            {
+                test.Add(value[i]);
+            }
+
+            subscribeStudents = test;
+        }
+    }
+
+
+    public Course()
+    {
+        name = "Пусто";
+        сourseDiscription = "Пусто";
+        freePlace = 0;
+    }
 }

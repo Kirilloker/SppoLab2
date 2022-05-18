@@ -88,5 +88,15 @@ namespace SppoLab2.WindowsForm
         {
             return admin;
         }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            admin.Save();
+        }
+        private void LoadButton_Click(object sender, EventArgs e)
+        {
+            admin.Load();
+        }
+        
     }
 }
